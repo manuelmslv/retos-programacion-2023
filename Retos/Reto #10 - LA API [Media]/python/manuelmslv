@@ -1,0 +1,11 @@
+import requests
+
+endpoint  = 'https://parallelum.com.br/fipe/api/v1/carros/marcas'
+
+r = requests.get(endpoint)
+content = r.json()
+
+for a in content:
+    b = a.get ('codigo')
+    a = a.get ('nome')
+    print(f"El codigo es: {b} y el modelo {a}")
